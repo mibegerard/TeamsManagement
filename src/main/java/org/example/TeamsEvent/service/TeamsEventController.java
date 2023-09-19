@@ -33,12 +33,24 @@ public class TeamsEventController {
     }
 
     private boolean eventIsValid(TeamsEventResponse event) {
-        // Implement your validation logic here
-        // Example: Check if the subject, organizer, and startDateTime are not empty or null.
-        return event.getSubject() != null && !event.getSubject().isEmpty()
-                && event.getOrganizer() != null && !event.getOrganizer().isEmpty()
-                && event.getStartDateTime() != null && !event.getStartDateTime().isEmpty();
-        // Add more validation checks as needed.
+        return isSubjectValid(event) && isOrganizerValid(event) && isStartDateTimeValid(event);
+
     }
+
+    private boolean isSubjectValid(TeamsEventResponse event) {
+        String subject = event.getSubject();
+        return subject != null && !subject.isEmpty();
+    }
+
+    private boolean isOrganizerValid(TeamsEventResponse event) {
+        String organizer = event.getOrganizer();
+        return organizer != null && !organizer.isEmpty();
+    }
+
+    private boolean isStartDateTimeValid(TeamsEventResponse event) {
+        String startDateTime = event.getStartDateTime();
+        return startDateTime != null && !startDateTime.isEmpty();
+    }
+
 }
 

@@ -10,7 +10,7 @@ import com.mongodb.client.MongoClients;
 public class MongoConfig {
 
     private final String mongoURI = "mongodb://localhost:27017";
-    private final String dbName = "Teams"; // Update with your MongoDB database name
+    private final String dbName = "Teams"; //
 
     @Bean
     public SimpleMongoClientDatabaseFactory mongoDbFactory() {
